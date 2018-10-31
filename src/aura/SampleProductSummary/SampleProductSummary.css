@@ -1,0 +1,59 @@
+/* simple bootstrap-ish styling */
+
+.THIS.card {
+    height: 100%;
+    min-height: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    min-width: 0;
+    word-wrap: break-word;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    text-decoration: none;
+    color: initial;
+}
+
+.THIS.card:hover {
+    transform: scale(1.07);
+    transition: all 100ms ease-in-out;
+    border-color: rgb(37, 116, 169);
+    background-color: #f4f8fc; /*rgba(25, 124, 190, 0.05); same colour, just non-transparent */
+}
+
+.THIS .card-img-top {
+    width: 100%;
+    display: block;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.THIS .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.THIS .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+.THIS .card-title {
+    margin-bottom: .75rem;
+    font-size: 1rem;
+}
+
+.THIS .card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0, 0, 0, .03);
+    border-top: 1px solid rgba(0, 0, 0, .125);
+    text-align: right;
+}
+
+.THIS .card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px)
+}
+
+.THIS .text-muted {
+    color: #6c757d !important;
+}

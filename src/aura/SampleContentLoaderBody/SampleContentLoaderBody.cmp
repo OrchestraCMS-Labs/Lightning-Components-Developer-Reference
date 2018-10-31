@@ -1,0 +1,32 @@
+<!--
+    Example of handling inline detail rendering from an OrchestraCMS Dynamic
+    Content Loader component.
+
+    Specified as bodyComponent in the Developer String, or through the
+    overrideBodyComponent global attribute.
+-->
+<aura:component description="SampleContentLoaderBody" access="global">
+
+    <!-- attributes provided by parent component -->
+    <aura:attribute name="contentComponents" type="Aura.Component[]" access="global" description="Rendered content components" />
+    <aura:attribute name="contentBundles" type="ContentBundle[]" access="global" description="Raw contentBundle objects representing rendered content" />
+    <aura:attribute name="contentSiteBundle" type="SiteBundle" access="global" description="SiteBundle object representing the OrchestraCMS site the content is pulled from" />
+    <aura:attribute name="hostSiteBundle" type="SiteBundle" access="global" description="SiteBundle object representing the community being viewed" />
+    <aura:attribute name="componentHeading" type="String" access="global" description="Heading text specified in the core component" />
+    <aura:attribute name="detailRendering" type="Aura.Component" access="global" description="Rendered detail content component to display" />
+
+    <div class="SampleContentLoaderBody">
+        <!-- detailRendering is null until a user clicks to view a content's detail template -->
+        <aura:if isTrue="{!v.detailRendering == null}">
+            <aura:iteration items="{!v.contentComponents}" var="cmp">
+                <div class="ContentItem">
+                    {!cmp}
+                </div>
+            </aura:iteration>
+            <aura:set attribute="else">
+                {!v.detailRendering}
+            </aura:set>
+        </aura:if>
+    </div>
+
+</aura:component>

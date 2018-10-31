@@ -1,0 +1,11 @@
+<!--
+    Custom content template that combines with the SampleAccordionBody component
+    to create an accordion-style FAQ section.
+-->
+<aura:component extends="cms:LightningTemplateController" description="Accordion section content template" access="global">
+
+    <lightning:accordionSection name="{!v.contentBundle.originId}" label="{!v.contentAttrs.title}">
+        <aura:unescapedHtml value="{!v.contentAttrs.htmlContent}" />
+    </lightning:accordionSection>
+
+</aura:component>

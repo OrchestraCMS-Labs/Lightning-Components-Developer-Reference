@@ -1,0 +1,84 @@
+.THIS {
+    width: 100%;
+}
+
+.THIS > a {
+    flex-direction: column;
+    height: 100%;
+    transition: background-color 350ms linear;
+}
+
+.THIS:hover > a,
+.THIS:hover .SummaryContent p {
+    background-color: #f4f8fc;
+}
+
+.THIS h3 {
+    color: black;
+}
+
+.THIS .slds-media__body {
+    flex: 0 1 auto;
+}
+
+.THIS .slds-media__figure {
+    position: relative; /* we’re going to overlay the summary text over the top part of the image */
+}
+
+.THIS .slds-tile {
+    align-items: flex-end;
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    justify-content:space-between;
+    flex-direction: column;
+}
+
+.THIS .slds-media__figure img {
+    width: 100%; /* for benefit of surprisingly small images */
+}
+
+.THIS .SummaryContent {
+    max-height: 0;
+    overflow: hidden;
+    /* height faster to shrink than to grow */
+    transition: max-height 250ms linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    min-width: 100%;
+}
+
+.THIS .SummaryContent p {
+    transition: all 350ms linear;
+}
+
+.THIS:hover .SummaryContent {
+    max-height: 8rem;
+    /* height slower to grow than to shrink */
+    transition: max-height 400ms linear;
+}
+
+.THIS:hover .SummaryContent p {
+    padding-bottom: 1rem;
+}
+
+.THIS .articleButtonBar {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .THIS .slds-tile {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .THIS .articleButtonBar {
+        width: auto;
+        align-items: flex-end;
+    }
+}

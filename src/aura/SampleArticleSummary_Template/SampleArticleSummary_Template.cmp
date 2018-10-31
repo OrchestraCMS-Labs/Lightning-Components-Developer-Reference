@@ -1,0 +1,34 @@
+<aura:component extends="cms:LightningTemplateController" description="Article summary content template" access="global">
+
+    <div class="ArticleSummary_Template">
+        <!-- component provided by parent. Indicates whether the user has read this content -->
+        {!v.unreadStatusComponent}
+
+        <a onclick="{!c.handleClick}" class="slds-box slds-media slds-grow slds-text-link--reset slds-grid slds-wrap slds-grid--vertical-stretch">
+            <div class="slds-media__body slds-m-bottom--x-small">
+                <h3 class="slds-text-heading--medium">{!v.contentAttrs.Headline}</h3>
+            </div>
+
+            <div class="slds-media__figure slds-size--1-of-1">
+                <div class="">
+                    <div class="slds-image__crop slds-image__crop--4-by-3">
+                        <!-- Image attributes need to be combined with the site url. Use the host SiteBundle - the user may not have access to the content site in the case of cross-site loading -->
+                        <img src="{!v.hostSiteBundle.siteUrl + v.contentAttrs.ImageId}" alt="" />
+                    </div>
+                </div>
+                <aura:if isTrue="{!v.contentAttrs.SummaryContent}">
+                    <div class="SummaryContent">
+                        <p>{!v.contentAttrs.SummaryContent}</p>
+                    </div>
+                </aura:if>
+            </div>
+
+            <div class="slds-grid slds-tile slds-size--1-of-1 slds-m-top--x-small slds-grid--vertical-align-center slds-grid--align-spread">
+                <div class="articleButtonBar">
+                    {!v.likeButtonComponent} <!-- If liking is enabled, renders a button allowing liking/unliking content -->
+                </div>
+            </div>
+        </a>
+    </div>
+
+</aura:component>

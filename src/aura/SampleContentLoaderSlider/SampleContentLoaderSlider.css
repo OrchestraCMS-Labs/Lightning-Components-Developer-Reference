@@ -1,0 +1,58 @@
+.THIS {
+    position: relative;
+    overflow: hidden;
+}
+
+.THIS .contentLoaderItems { /* contentLoaderItems is comes from ContentLoader */
+    display: block;
+    white-space: nowrap;
+    transition: all 500ms ease-in-out; /* scroll speed */
+    padding: 0;
+}
+
+.THIS .contentLoaderItems > .ocmsContent_X { /* ocmsContent_X wraps each content item */
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% + 1px);
+    padding: 0;
+}
+
+.THIS .contentLoaderItems > .ocmsContent_X * {
+    /* reset text formatting */
+    white-space: initial;
+    text-indent: initial;
+}
+
+.THIS .sliderButton {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 200ms linear;
+    outline: none;
+}
+
+.THIS .sliderButton svg {
+    fill: rgba(0, 0, 0, .3);
+}
+
+.THIS:hover .sliderButton {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.THIS:hover .sliderButton svg {
+    fill: #fff;
+}
+
+.THIS .sliderButton:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.THIS .sliderButtonLeft {
+    left: 0;
+}
+
+.THIS  .sliderButtonRight {
+    right: 0;
+}

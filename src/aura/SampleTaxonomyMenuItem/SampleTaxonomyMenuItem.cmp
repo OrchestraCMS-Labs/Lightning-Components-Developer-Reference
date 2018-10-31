@@ -1,0 +1,20 @@
+<!--
+    Example of overriding markup of Taxonomy Menu items when paired with a
+    menu override component.
+
+    Functionality and attributes are provided by TaxonomyMenuItemOverride
+-->
+<aura:component extends="cms:TaxonomyMenuItemOverride" access="global" description="Sample replacement markup for taxonomy menu items">
+
+    <aura:attribute name="componentName" type="String" default="c:SampleTaxonomyMenuItem" access="global" description="Must define the component name as an attribute" />
+
+    <li class="list-group-item">
+        <a onclick="{!c.changeTaxonomyPath}" class="{!v.isActive ? 'active' : ''}" aria-level="{!v.ariaLevel}">{!v.tagName}</a>
+        <aura:if isTrue="{!v.contentChildren.length}">
+            <ul class="list-group">
+                {!v.childComponents}
+            </ul>
+        </aura:if>
+    </li>
+
+</aura:component>

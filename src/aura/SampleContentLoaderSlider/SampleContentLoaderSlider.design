@@ -1,0 +1,21 @@
+<design:component label="SampleContentLoaderSlider">
+    <design:attribute name="contentType" label="Content Type" datasource="apex://cms.AuraGetSupportedContentTypes" description="Enter the Type label of the OrchestraCMS Content items you wish to populate." />
+    <design:attribute name="contentLayout" label="Content Template" datasource="apex://cms.AuraGetSupportedContentTemplates" description="Enter the Template label of the OrchestraCMS Content items you wish to display." />
+    <design:attribute name="tagPath" label="Taxonomy Starting Path" description="Enter the full path of the taxonomy category where this component will begin displaying Content items. eg. /Taxonomy Name/Category/Category" />
+    <design:attribute name="depth" label="Taxonomy Levels to Include" min="1" max="5" default="5" description="Determines how many hierarchical taxonomy category levels the component will use when populating content. Enter a value from 1 to 5." />
+    <design:attribute name="autoAdvance" label="Automatically Advance Slides" description="Automatically advance between slides based on a timer." />
+    <design:attribute name="advanceDelay" label="Slide Advance Delay (ms)" description="Amount of time to pause on a slide before advancing to the next (in milliseconds)" />
+    <design:attribute name="componentHeading" label="Heading" description="Enter a heading to appear at the top of this dynamically loaded content." />
+    <design:attribute name="order" label="Sort Order" datasource="Original Publish Date, Alphabetical, Priority Original Publish Date, Published Start Date" /> <!-- ensure values match in helper.setOrderApiName -->
+    <design:attribute name="ignoreTargets" Label="Ignore Targets" description="When selected, targets applied to content are ignored and all content is displayed." />
+    <design:attribute name="limitCount" label="Item Load Count" default="5" description="The number of items displayed when the page loads. It is recommended that the total number of items does not exceed 50." />
+    <design:attribute name="displayDetail" label="Display Content Detail" datasource="On SObject Detail Page, On Custom Detail Page, As Modal Dialog Window" description="Select how Content details will display." /> <!-- ensure helper.getDetailType matches values! -->
+    <design:attribute name="customDetail" label="Custom Detail Page URL" />
+    <design:attribute name="displayUnreadStatus" label="Display Unread Status" description="Display a flag that indicates if the current user has not viewed a content item." />
+    <design:attribute name="displayLikeButton" label="Display Likes" description="Display a Like button and Like count for the Content item." />
+    <design:attribute name="displayChatterFeed" label="Display Chatter Comments" description="Display the Content's chatter feed when the Content item is loaded inline." />
+    <design:attribute name="instanceName" label="Taxonomy Menu ID" description="Enter a unique value to link this Taxonomy Menu to a Dynamic Taxonomy Loader on this page." />
+    <design:attribute name="siteName" label="OrchestraCMS Site Name" datasource="apex://cms.AuraGetOrchestraCMSSites"
+                      description="Enter the name of an OrchestraCMS site to map this component to it. The component will get content from that site. Leave blank for default mapping, which matches names of the Community’s force.com site and the OrchestraCMS site." />
+
+</design:component>

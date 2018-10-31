@@ -1,0 +1,46 @@
+/* simple bootstrap-ish styling */
+
+.THIS.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.THIS .list-group-item a {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    font-size: 1rem;
+}
+
+.THIS .list-group-item a:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+}
+
+.THIS .list-group-item a.active {
+    background-color: #f4f8fc;
+    text-decoration: none;
+}
+
+.THIS .list-group-item a[aria-level="2"] {
+    padding-left: 2.5rem;
+}
+
+.THIS .list-group-item a[aria-level="3"] {
+    padding-left: 4rem;
+}
+
+.THIS .list-group-item a[aria-level="4"] {
+    padding-left: 5.5rem;
+}
+
+.THIS .list-group-item a[aria-level="5"] {
+    padding-left: 7rem;
+}
+
+h3.THIS {
+    font-size: 1.1rem;
+}

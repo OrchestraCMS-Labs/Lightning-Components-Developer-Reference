@@ -1,0 +1,21 @@
+<!--
+    Example of overriding markup of a Taxonomy Menu when paired with a
+    menu item override component.
+-->
+<aura:component access="global" description="Sample replacement body markup for OrchestraCMS Taxonomy Menu Lightning Component">
+
+    <!-- attributes provided by parent component -->
+    <aura:attribute name="componentHeading" type="String" access="global" description="Heading text (optional)" />
+    <aura:attribute name="contentComponents" type="Aura.Component[]" access="global" description="List of menu item components - either li elements or markup of your choice if providing item component" />
+    <aura:attribute name="contentBundles" type="ContentBundle[]" access="global" description="ContentBundle representation of the menu and menu structure" />
+    <aura:attribute name="contentSiteBundle" type="SiteBundle" access="global" description="Site information for the menu content's site" />
+    <aura:attribute name="hostSiteBundle" type="SiteBundle" access="global" description="Site information for the current site" />
+
+    <aura:if isTrue="{!v.componentHeading}">
+        <h3>{!v.componentHeading}</h3>
+    </aura:if>
+    <ul class="sampleTaxonomyMenu list-group">
+        {!v.contentComponents}
+    </ul>
+
+</aura:component>

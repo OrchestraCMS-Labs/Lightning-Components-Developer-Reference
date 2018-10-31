@@ -1,0 +1,10 @@
+.THIS {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.THIS .ContentItem {
+    min-width: 70%;
+    padding: .25rem;
+}

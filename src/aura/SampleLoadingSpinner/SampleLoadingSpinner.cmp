@@ -1,0 +1,15 @@
+<!--
+    Example override of an OrchestraCMS component's loading spinner.
+
+    Specified as loadingComponent in the Developer String, or through the
+    overrideLoadingComponent global attribute.
+-->
+<aura:component access="global">
+
+    <div class="slds-spinner_container">
+        <div class="loading-icon" role="status">
+            <lightning:icon iconName="utility:animal_and_nature" alternativeText="Loading" size="large" />
+        </div>
+    </div>
+
+</aura:component>

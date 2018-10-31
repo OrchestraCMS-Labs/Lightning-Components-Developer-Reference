@@ -1,0 +1,26 @@
+<!--
+    Example of combining a custom body component with custom content templates
+    to create an accordion style FAQ section. Intended to be used from an
+    OrchestraCMS Dynamic Content Loader component, but will also function from
+    an OrchestraCMS Static Content component.
+
+    Specified as bodyComponent in the Developer String, or through the
+    overrideBodyComponent global attribute.
+-->
+<aura:component description="Display content as an accordion" access="global">
+
+    <!-- attributes provided by parent component -->
+    <aura:attribute name="contentComponents" type="Aura.Component[]" access="global" description="Rendered content components" />
+    <aura:attribute name="contentBundles" type="ContentBundle[]" access="global" description="Raw contentBundle objects representing rendered content" />
+    <aura:attribute name="contentSiteBundle" type="SiteBundle" access="global" description="SiteBundle object representing the OrchestraCMS site the content is pulled from" />
+    <aura:attribute name="hostSiteBundle" type="SiteBundle" access="global" description="SiteBundle object representing the community being viewed" />
+    <aura:attribute name="componentHeading" type="String" access="global" description="Heading text specified in the core component" />
+
+
+    <h1>{!v.componentHeading}</h1>
+    <lightning:accordion >
+        <lightning:accordionSection name="hiddenSection" class="hiddenSection" /> <!-- one section is open by default, so make a hidden section as the first item -->
+        {!v.contentComponents}
+    </lightning:accordion>
+
+</aura:component>

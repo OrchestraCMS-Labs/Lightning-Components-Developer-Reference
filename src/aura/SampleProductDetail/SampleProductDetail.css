@@ -1,0 +1,94 @@
+/* simple bootstrap-ish styling */
+
+.THIS.card {
+    height: 100%;
+    min-height: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    min-width: 0;
+    word-wrap: break-word;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    text-decoration: none;
+    color: initial;
+}
+
+.THIS .card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    font-size: 1rem;
+}
+
+.THIS .card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.THIS .backButton {
+    float: right;
+    width: auto;
+    padding: 0 .5rem;
+    line-height: 30px;
+}
+
+.THIS .card-header h4 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.THIS .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.THIS .card-body p {
+    margin-bottom: 1rem;
+}
+
+.THIS .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.THIS .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.THIS .btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.THIS .figure {
+    float: left;
+    margin: 0 1.25rem 1.25rem 0;
+    max-width: 50%;
+}
+
+.THIS .figure-img {
+    border-radius: .25rem;
+}
+
+.THIS .card-footer {
+    padding: .75rem 1.25rem;
+    border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+.THIS .card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px)
+}

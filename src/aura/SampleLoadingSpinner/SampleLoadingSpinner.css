@@ -1,0 +1,20 @@
+.THIS .loading-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9051;
+    transform: translate(-50%, -50%);
+}
+
+.THIS .loading-icon lightning-icon {
+    animation: loading 4s linear infinite;
+}
+
+@keyframes loading { 
+    50% { 
+        transform: rotate(360deg) scale(1.5); 
+    }
+    100% {
+        transform: rotate(720deg) scale(1.0); 
+    }
+}

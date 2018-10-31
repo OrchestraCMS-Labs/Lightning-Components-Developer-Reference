@@ -1,0 +1,53 @@
+<aura:component extends="cms:LightningTemplateController" description="Article detail content template" access="global">
+
+    <div class="ArticleDetail_Template">
+        <div class="slds-page-header" role="banner">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media slds-no-space slds-grow">
+                        <div class="slds-media__figure">
+                            <lightning:icon iconName="standard:article" alternativeText="Article" />
+                        </div>
+                        <div class="slds-media__body">
+                            <h1 class="slds-page-header__title slds-m-right--small slds-align-middle">{!v.contentAttrs.Headline}</h1>
+                            <div class="date">
+                                <!-- component provided by the parent. Displays the content's publish date -->
+                                {!v.formattedPublishedDateComponent}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-no-flex slds-align-top">
+                    <!-- components provided by the parent -->
+                    {!v.inlineBackButtonComponent} <!-- If loaded inline, renders a button to return to the summary view -->
+                    {!v.likeButtonComponent} <!-- If liking is enabled, renders a button allowing liking/unliking content -->
+                </div>
+            </div>
+        </div>
+        <aura:if isTrue="{!!empty(v.contentAttrs.LargeImageId)}">
+            <figure class="slds-image--card">
+                <div class="slds-image__crop slds-image__crop--16-by-9">
+                    <!-- Image attributes need to be combined with the site url. Use the host SiteBundle - the user may not have access to the content site in the case of cross-site loading -->
+                    <img src="{!v.hostSiteBundle.siteUrl + v.contentAttrs.LargeImageId}" alt="" />
+                </div>
+                <figcaption class="slds-image__title slds-image__title--card">
+                    <span class="slds-image__text slds-truncate">{!v.contentAttrs.TitleImageText}</span>
+                </figcaption>
+            </figure>
+        </aura:if>
+
+        <div class="article-text">
+            <aura:unescapedHtml value="{!v.contentAttrs.HTMLContent}"/>
+        </div>
+
+        <aura:if isTrue="{!v.chatterFeedComponent}">
+            <div class="article-feed">
+                <h3>Comments</h3>
+
+                <!-- component provided by the parent. Salesforce chatter publisher + feed -->
+                {!v.chatterFeedComponent}
+            </div>
+        </aura:if>
+    </div>
+
+</aura:component>

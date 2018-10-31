@@ -1,0 +1,37 @@
+.THIS {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.THIS:hover {
+    background-color: #f4f8fc;
+}
+
+/* Compact layout */
+.THIS .article-title-compact {
+    font-size: 18px;
+}
+.THIS .article-summary-compact:hover {
+    cursor: pointer;
+}
+
+.THIS .article-summary-compact .slds-icon {
+    float: left;
+}
+
+.THIS .article-summary-compact .summaryText {
+    width: 100%;
+}
+
+.THIS .articleIcon svg {
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+}
+
+.THIS .compactFooter {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 0.75rem;
+}

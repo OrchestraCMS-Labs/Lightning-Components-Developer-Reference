@@ -1,0 +1,19 @@
+<aura:component extends="cms:LightningTemplateController" description="Article compact summary content template" access="global">
+
+    <div class="ArticleCompact_Template">
+        <div class="article-summary-compact slds-grid">
+            <div class="slds-media__figure articleIcon">
+                <lightning:icon iconName="standard:article" alternativeText="Article" />
+            </div>
+            <div class="summaryText">
+                <h3><a onclick="{!c.handleClick}" class="article-title-compact ocms-title-taxonomy-detail-link">{!v.contentAttrs.Headline}</a></h3>
+                <p>{!v.contentAttrs.SummaryContent}</p>
+                <div class="compactFooter">
+                    <!-- component provided by the parent. Displays the content's publish date -->
+                    <div class="date">{!v.formattedPublishedDateComponent}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aura:component>

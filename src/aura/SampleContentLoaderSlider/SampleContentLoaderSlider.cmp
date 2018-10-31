@@ -1,0 +1,55 @@
+<!--
+    Example of wrapping an OrchestraCMS component to provide extra functionality
+-->
+<aura:component description="A slider/slideshow component that uses the Dynamic Content Loader to load content by type or taxonomy path" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+    <!-- pass-through attributes for Content Loader -->
+    <aura:attribute name="siteName" type="String" access="global" />
+    <aura:attribute name="contentType" type="String" required="true" access="global" />
+    <aura:attribute name="contentLayout" type="String" required="true" access="global" />
+    <aura:attribute name="tagPath" type="String" access="global" />
+    <aura:attribute name="depth" type="Integer" default="5" access="global" />
+    <aura:attribute name="componentHeading" type="String" default="" access="global" />
+    <aura:attribute name="columnCount" type="String" default="1 column" access="global" />
+    <aura:attribute name="order" type="string" default="Original Publish Date" access="global" />
+    <aura:attribute name="ignoreTargets" type="Boolean" default="false" access="global" />
+    <aura:attribute name="limitCount" type="Integer" default="5" access="global" />
+    <aura:attribute name="displayDetail" type="String" default="On SObject Detail Page" access="global" />
+    <aura:attribute name="customDetail" type="String" access="global" />
+    <aura:attribute name="displayUnreadStatus" type="Boolean" default="false" access="global" />
+    <aura:attribute name="displayLikeButton" type="Boolean" default="false" access="global" />
+    <aura:attribute name="displayChatterFeed" type="Boolean" default="false" access="global" />
+    <aura:attribute name="instanceName" type="String" access="global" />
+
+    <!-- custom attributes for this sample component -->
+    <aura:attribute name="autoAdvance" type="Boolean" default="true" access="global" description="Enable or disable advancement of slides automatically on a timer" />
+    <aura:attribute name="advanceDelay" type="Integer" default="5000" access="global" description="Milliseconds between automatic advancement of slides" />
+
+    <aura:attribute name="contentLoadCount" type="Integer" default="0" access="private" description="The number of content reported by ContentLoader" />
+    <aura:attribute name="visibleItem" type="Integer" default="0" access="private" description="The index of the current visible content slide" />
+    <aura:attribute name="autoAdvanceTimer" type="Object" access="private" description="Javascript setTimeout object" />
+    <aura:attribute name="contentLoader" type="Aura.Component" access="private" description="The ContentLoader component we're wrapping" />
+
+    <!-- handled events -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="ComponentLoadedEvt" event="cms:ComponentLoadedEvt" action="{!c.componentLoaded}" />
+
+    <lightning:buttonIcon iconName="utility:refresh" alternativeText="Refresh" onclick="{!c.refresh}" />
+
+    <div class="sliderContainer" id="{!'slider-' + globalId}">
+        <div class="sliderContent" aura:id="sliderScrollContainer">
+            {!v.contentLoader}
+        </div>
+        <div class="sliderControls">
+            <aura:if isTrue="{!v.contentLoadCount > 1}">
+                <button class="sliderButton sliderButtonLeft" onclick="{!c.scrollLeft}" aura:id="sliderButtonLeft">
+                    <lightning:icon iconName="utility:chevronleft" alternativeText="Previous" size="small" />
+                </button>
+                <button class="sliderButton sliderButtonRight" onclick="{!c.scrollRight}" aura:id="sliderButtonRight">
+                    <lightning:icon iconName="utility:chevronright" alternativeText="Next" size="small" />
+                </button>
+            </aura:if>
+        </div>
+    </div>
+
+</aura:component>
