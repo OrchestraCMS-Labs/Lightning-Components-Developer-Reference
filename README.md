@@ -4,13 +4,18 @@
 
 1. [Summary](#summary)
     1. [Compatibility](#compatibility)
-    1. [Prerequisites](#prerequisites)
-    1. [Deployment](#deployment)
-    1. [Configuration](#configuration)
-1. [Versioning](#versioning)
+    2. [Prerequisites](#prerequisites)
+    3. [Deployment](#deployment)
+    4. [Configuration](#configuration)
+2. [Examples](#examples)
+    1. [Custom Content Templates](#templates)
+    2. [Changing Component Markup](#markup)
+    3. [Extending Components](#extending)
+    4. [Override & Enhancer Controllers](#controllers)
+3. [Versioning](#versioning)
     1. [Major Versions](#major-versions)
-    1. [Minor Versions](#minor-versions)
-    1. [Patch Versions](#patch-versions)
+    2. [Minor Versions](#minor-versions)
+    3. [Patch Versions](#patch-versions)
 
 <!-- /MarkdownTOC -->
 
@@ -21,20 +26,21 @@ This repository contains examples of developing with OrchestraCMS's Lightning Co
 example content types and templates, as well as lightning components for extending and overriding the
 functionality provided by OrchestraCMS.
 
-Please see the official documentation on [Stantive Technologies Group's Developer Site](https://developer.stantive.com/Lightning) 
+Please see the official documentation on [Stantive Technologies Group's Developer Site](https://developer.stantive.com/) 
 for information on how to use this example code.
 
 <a name="compatibility"></a>
 ### Compatibility
 
-This code requires a minimum of OrchestraCMS package 8.202 (October 2018, v9.0 Build #8.202).
+This code requires a minimum of OrchestraCMS package 8.213 (October 2018, v9.0 Build #8.213).
 
 <a name="prerequisites"></a>
 ### Prerequisites
 
 1. A compatible version of OrchestraCMS is installed in the target Salesforce organization.
-2. A Community using a lightning template (like Customer Service)
-3. A site has been created in OrchestraCMS.
+2. OrchestraCMS API Resources deployed to your org
+3. A Community using a lightning template (like Customer Service)
+4. A site has been created in OrchestraCMS.
 
 <a name="deployment"></a>
 ### Deployment
@@ -96,6 +102,55 @@ Templates:
     Sample Product Detail, autocreate, default
     Sample Product Summary, autocreate
 ```
+
+<a name="examples"></a>
+## Examples
+
+<a name="templates"></a>
+### Custom Content Templates
+
+Three "Article" content templates are provided. Demonstrates how to link from a summary template to 
+a detail template, and how to use default components for like tracking and chatter. A fourth template
+is provided as an example of using the "Markup" field in Content Template Creator
+
+#### Metadata
+- SampleArticleDetail_Template
+- SampleArticleSummary_Template
+- SampleArticleSummaryCompact_Template
+- CTCArticleSummaryResource.resource 
+
+<a name="markup"></a>
+### Changing Component Markup
+
+Examples of overriding component markup for Static Content, Dynamic Content, Taxonomy Menus, and any 
+component's loading spinner.
+
+#### Metadata
+- SampleAccordionBody
+- SampleAccordionTemplate
+- SampleContentLoaderBody
+- SampleLoadingSpinner
+- SampleTaxonomyMenuBody
+- SampleTaxonomyMenuItem
+
+<a name="extending"></a>
+### Extending Component Functionality
+
+An example of extending a Content Loader component to act as a slideshow/carousel
+
+#### Metadata
+- SampleContentLoaderSlider
+
+<a name="controllers"></a>
+### Override & Enhancer Controllers
+
+Examples of replacing server-side functionality, and returning extra information along with content
+
+#### Metadata
+- SampleProductDetail
+- SampleProductSummary
+- SampleProductEnhancerController.cls
+- SampleProductOverrideController.cls
 
 <a name="versioning"></a>
 ## Versioning
