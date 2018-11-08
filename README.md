@@ -32,7 +32,7 @@ for information on how to use this example code.
 <a name="compatibility"></a>
 ### Compatibility
 
-This code requires a minimum of OrchestraCMS package 8.213 (October 2018, v9.0 Build #8.213).
+This code requires a minimum of OrchestraCMS package 8.216 (November 2018, v10.0 Build #8.216).
 
 <a name="prerequisites"></a>
 ### Prerequisites
@@ -49,15 +49,16 @@ This code requires a minimum of OrchestraCMS package 8.213 (October 2018, v9.0 B
     1. SampleAccordionBody
     2. SampleAccordionTemplate
     3. SampleArticleDetail_Template
-    4. SampleArticleSummaryCompact_Template
-    5. SampleArticleSummary_Template
-    6. SampleContentLoaderBody
-    7. SampleContentLoaderSlider
-    8. SampleLoadingSpinner
-    9. SampleProductDetail
-    10. SampleProductSummary
-    11. SampleTaxonomyMenuBody
-    12. SampleTaxonomyMenuItem 
+    4. SampleArticleEditor
+    5. SampleArticleSummaryCompact_Template
+    6. SampleArticleSummary_Template
+    7. SampleContentLoaderBody
+    8. SampleContentLoaderSlider
+    9. SampleLoadingSpinner
+    10. SampleProductDetail
+    11. SampleProductSummary
+    12. SampleTaxonomyMenuBody
+    13. SampleTaxonomyMenuItem 
 2. Deploy the following Apex classes to the target Salesforce organization
     1. SampleProductEnhancerController.cls
     2. SampleProductOverrideController.cls
@@ -117,6 +118,7 @@ is provided as an example of using the "Markup" field in Content Template Creato
 - SampleArticleDetail_Template
 - SampleArticleSummary_Template
 - SampleArticleSummaryCompact_Template
+- SampleArticleEditor
 - CTCArticleSummaryResource.resource 
 
 <a name="markup"></a>

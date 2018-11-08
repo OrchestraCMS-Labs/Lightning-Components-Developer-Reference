@@ -1,0 +1,28 @@
+<aura:component extends="cms:LightningEditorController" access="global">
+
+    <aura:attribute name="Headline" type="String" access="global" />
+    <aura:attribute name="SummaryContent" type="String" access="global" />
+    <aura:attribute name="HTMLContent" type="String" access="global" />
+    <aura:attribute name="ImageId" type="String" access="global" />
+    <aura:attribute name="LargeImageId" type="String" access="global" />
+    <aura:attribute name="TitleImageText" type="String" access="global" />
+
+    <aura:method name="getAttributes" action="{!c.getAttributes}" access="global" />
+
+
+    <cms:InlineEditingContentAttribute attributeType="TextInputAttribute" label="Headline" name="Headline" value="{!v.Headline}" />
+    <cms:InlineEditingContentAttribute attributeType="TextInputAttribute" label="Summary" name="SummaryContent" value="{!v.SummaryContent}" />
+    <cms:InlineEditingContentAttribute attributeType="RichTextAttribute" label="Article Body" name="HTMLContent" value="{!v.HTMLContent}" siteBundle="{!v.siteBundle}" contentLayout="{!v.contentLayout}" />
+    <div class="slds-form-element__group">
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-2">
+                <cms:InlineEditingContentAttribute attributeType="ImageSelectorAttribute" label="Summary Image" name="ImageId" value="{!v.ImageId}" siteBundle="{!v.siteBundle}" />
+            </div>
+            <div class="slds-form-element slds-size--1-of-2">
+                <cms:InlineEditingContentAttribute attributeType="ImageSelectorAttribute" label="Detail Image" name="LargeImageId" value="{!v.LargeImageId}" siteBundle="{!v.siteBundle}" />
+            </div>
+        </div>
+    </div>
+    <cms:InlineEditingContentAttribute attributeType="TextInputAttribute" label="Image Caption" name="TitleImageText" value="{!v.TitleImageText}" />
+
+</aura:component>
