@@ -1,0 +1,19 @@
+<aura:component extends="cms:LightningEditorController" access="global">
+
+    <aura:attribute name="dateTime" type="String" access="global" />
+    <aura:attribute name="street" type="String" access="global" />
+    <aura:attribute name="city" type="String" access="global" />
+    <aura:attribute name="province" type="String" access="global" />
+    <aura:attribute name="postalCode" type="String" access="global" />
+    <aura:attribute name="country" type="String" access="global" />
+
+    <aura:method name="getAttributes" action="{!c.getAttributes}" access="global" />
+
+
+    <lightning:input type="datetime" label="Event Date" value="{!v.dateTime}" />
+
+    <lightning:inputAddress
+        addressLabel="Address" streetLabel="Street" cityLabel="City" countryLabel="Country" provinceLabel="Province" postalCodeLabel="Postal Code"
+        street="{!v.street}" city="{!v.city}" province="{!v.province}" postalCode="{!v.postalCode}" country="{!v.country}" />
+
+</aura:component>
