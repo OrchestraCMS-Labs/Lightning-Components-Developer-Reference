@@ -13,7 +13,7 @@
                 <div class="">
                     <div class="slds-image__crop slds-image__crop--4-by-3">
                         <!-- Image attributes need to be combined with the site url. Use the host SiteBundle - the user may not have access to the content site in the case of cross-site loading -->
-                        <img src="{!v.hostSiteBundle.siteUrl + v.contentAttrs.ImageId}" alt="" />
+                        <img src="{!v.contentAttrs.ImageId}" alt="" />
                     </div>
                 </div>
                 <aura:if isTrue="{!v.contentAttrs.SummaryContent}">

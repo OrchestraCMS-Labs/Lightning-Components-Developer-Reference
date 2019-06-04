@@ -28,7 +28,7 @@
             <figure class="slds-image--card">
                 <div class="slds-image__crop slds-image__crop--16-by-9">
                     <!-- Image attributes need to be combined with the site url. Use the host SiteBundle - the user may not have access to the content site in the case of cross-site loading -->
-                    <img src="{!v.hostSiteBundle.siteUrl + v.contentAttrs.LargeImageId}" alt="" />
+                    <img src="{!v.contentAttrs.LargeImageId}" alt="" />
                 </div>
                 <figcaption class="slds-image__title slds-image__title--card">
                     <span class="slds-image__text slds-truncate">{!v.contentAttrs.TitleImageText}</span>

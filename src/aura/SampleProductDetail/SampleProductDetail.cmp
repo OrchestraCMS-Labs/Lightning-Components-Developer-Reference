@@ -13,7 +13,7 @@
         <div class="card-body">
             <aura:if isTrue="{!v.contentAttrs.productImage}">
                 <figure class="figure">
-                    <img src="{! v.hostSiteBundle.siteUrl + v.contentAttrs.productImage}" class="figure-img" alt="{!v.contentAttrs.productName + ' image'}" />
+                    <img src="{!v.contentAttrs.productImage}" class="figure-img" alt="{!v.contentAttrs.productName + ' image'}" />
                 </figure>
             </aura:if>
             <!-- contentProperties attribute is an object with properties defined by developer in an override or enhancer controller -->

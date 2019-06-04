@@ -7,7 +7,7 @@
 
     <a onclick="{!c.handleClick}" class="card">
         <aura:if isTrue="{!v.contentAttrs.productImage}">
-            <img class="card-img-top" src="{! v.hostSiteBundle.siteUrl + v.contentAttrs.productImage}" alt="{!v.contentAttrs.productName + ' image'}" />
+            <img class="card-img-top" src="{!v.contentAttrs.productImage}" alt="{!v.contentAttrs.productName + ' image'}" />
         </aura:if>
         <div class="card-body">
             <h4 class="card-title">{!v.contentAttrs.productName}</h4>
